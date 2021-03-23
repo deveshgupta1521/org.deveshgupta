@@ -8,12 +8,12 @@ import hibernatedemo.model.Message;
 
 public class App {
     public static void main(String[] args) {
-        MessageDAO mDao = new MessageDAO();
+        MessageDAO dao = new MessageDAO();
         Message m = new Message();
         m.setText("Hello World "+ new Date());
-        mDao.saveStudent(m);
+        dao.saveMessage(m);
 
-        List<Message> ms = mDao.getStudents();
+        List<Message> ms = dao.getMessages();
         ms.forEach(s -> System.out.println(s.getText()));
     }
 }

@@ -9,7 +9,7 @@ import hibernatedemo.model.Message;
 import hibernatedemo.util.HibernateUtil;
 
 public class MessageDAO {
-	public void saveStudent(Message m) {
+	public void saveMessage(Message m) {
 		Transaction transaction = null;
 		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
 			// start a transaction
@@ -26,7 +26,7 @@ public class MessageDAO {
 		}
 	}
 
-	public List<Message> getStudents() {
+	public List<Message> getMessages() {
 		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
 			return session.createQuery("from Message", Message.class).list();
 		}
